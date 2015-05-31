@@ -6,12 +6,21 @@
 #define TFT_RST    9  // you can also connect this to the Arduino reset 
 #define TFT_DC     8
 #define Landscape  1
+// Color definitions
+#define BLACK    0x0000
+#define BLUE     0x001F
+#define RED      0xF800
+#define GREEN    0x07E0
+#define CYAN     0x07FF
+#define MAGENTA  0xF81F
+#define YELLOW   0xFFE0 
+#define WHITE    0xFFFF
 
-Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS,  TFT_DC, TFT_RST);
-
+// IR part
 #include <Wire.h>
 #include <Adafruit_MLX90614.h>
 
+Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS,  TFT_DC, TFT_RST);
 Adafruit_MLX90614 mlx = Adafruit_MLX90614();
 
 void setup() {
