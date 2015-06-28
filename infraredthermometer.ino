@@ -23,6 +23,8 @@
 Adafruit_ST7735 tft = Adafruit_ST7735(TFT_CS,  TFT_DC, TFT_RST);
 Adafruit_MLX90614 mlx = Adafruit_MLX90614();
 
+float temp;
+
 void setup() {
   mlx.begin();  
  // Use this initializer if you're using a 1.8" TFT
@@ -37,7 +39,9 @@ void setup() {
 void loop() {
    tft.setCursor(45, 50);
    tft.setTextSize(3);
-   tft.print(mlx.readObjectTempC());
+   temp=mlx.readObjectTempC();
+   //tft.print(mlx.readObjectTempC());
+   tft.print(temp);
    delay(500);
    tft.fillScreen(ST7735_BLACK);
 }
